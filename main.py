@@ -48,3 +48,31 @@ if not funds.set_expense(15):
     print(funds.get_error())
 
 print('You have $' + str(funds.get_fund_left()) + ' left.')
+
+
+class Cycles:
+    def set_as_assembled(self, is_assembled):
+        self.assembled = is_assembled
+    def get_wheel_count(self):
+        return self.wheel_count
+    def who_am_i(self):
+        return 'I am the original function'
+    
+class Monocycke(Cycles):
+    def who_am_i(self):
+        return 'I am overriding the parent function'
+
+class Bicycle(Cycles):
+    wheel_count = 2
+
+class Tricycle(Cycles):
+    wheel_count = 3
+
+monocycles = Monocycle()
+print(monocycles.get_wheel_count())
+
+cycles = Bicycle()
+print(cycles.get_wheel_count())
+
+print(monocycles.who_am_i())
+print(cycles.who_am_i())
