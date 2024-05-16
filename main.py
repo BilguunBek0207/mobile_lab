@@ -76,3 +76,24 @@ print(cycles.get_wheel_count())
 
 print(monocycles.who_am_i())
 print(cycles.who_am_i())
+
+
+class Pet:
+    def sound(self):
+        pass
+    
+# IS-A pet
+class Cat(Pet):
+    def sound(self):
+        return 'Meow'
+# IS-A pet
+class Dog(Pet):
+    def sound(self):
+        return 'Woof'
+
+def getSound(pet: Pet):
+    return pet.sound()
+
+print(getSound(Dog()))
+print(getSound(Cat()))
+
